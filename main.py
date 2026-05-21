@@ -2,7 +2,11 @@ import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.tools import tool
-from langchain_core.messages import HumanMessage, ToolMessage
+from deepagents import create_deep_agent
+from deepagents.profiles.harness.harness_profiles import (
+    HarnessProfile,
+    register_harness_profile,
+)
 
 # 加载环境变量
 load_dotenv()
@@ -21,25 +25,23 @@ def get_weather(city: str) -> str:
     return f"The weather in {city} is sunny!"
 
 
-# 绑定工具
-model_with_tools = model.bind_tools([get_weather])
+# 注册 HarnessProfile，禁用与 ModelScope 不兼容的 SummarizationMiddleware
+# 该中间件会导致 API 返回 choices 为 null 的错误
+profile = HarnessProfile(
+    excluded_middleware=frozenset({"SummarizationMiddleware"}),
+)
+register_harness_profile("openai", profile)
 
-# 用户输入
-messages = [HumanMessage(content="What is the weather in Beijing?")]
+# 创建 Deep Agent
+agent = create_deep_agent(
+    model=model,
+    tools=[get_weather],
+    system_prompt="You are a helpful assistant.",
+)
 
-# 第一次调用：模型决定是否需要使用工具
-response = model_with_tools.invoke(messages)
+# 运行 Agent
+result = agent.invoke(
+    {"messages": [{"role": "user", "content": "What is the weather in Beijing?"}]}
+)
 
-# 如果模型调用了工具，执行工具并再次调用模型
-if response.tool_calls:
-    messages.append(response)
-    for tool_call in response.tool_calls:
-        if tool_call["name"] == "get_weather":
-            tool_result = get_weather.invoke(tool_call)
-            messages.append(tool_result)
-
-    # 第二次调用：获取最终回答
-    final_response = model_with_tools.invoke(messages)
-    print(final_response.content)
-else:
-    print(response.content)
+print(result["messages"][-1].content)
