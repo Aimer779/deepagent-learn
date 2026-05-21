@@ -1,30 +1,45 @@
 import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
-from deepagents import create_deep_agent
+from langchain_core.tools import tool
+from langchain_core.messages import HumanMessage, ToolMessage
 
 # 加载环境变量
 load_dotenv()
 
 # 通过 ModelScope 接入模型（兼容 OpenAI 接口）
 model = ChatOpenAI(
-    model="THUDM/glm-4-9b-chat",  # ModelScope 上支持 Tools 的模型
+    model="Qwen/Qwen3.5-27B",
     api_key=os.environ["MODELSCOPE_ACCESS_TOKEN"],
     base_url=os.environ["MODELSCOPE_BASE_URL"],
 )
 
+
+@tool
 def get_weather(city: str) -> str:
     """Get weather for a given city."""
-    return f"It's always sunny in {city}!"
+    return f"The weather in {city} is sunny!"
 
-agent = create_deep_agent(
-    model=model,
-    tools=[get_weather],
-    system_prompt="You are a helpful assistant.",
-)
 
-result = agent.invoke(
-    {"messages": [{"role": "user", "content": "北京今天天气怎么样？"}]}
-)
+# 绑定工具
+model_with_tools = model.bind_tools([get_weather])
 
-print(result["messages"][-1].content)
+# 用户输入
+messages = [HumanMessage(content="What is the weather in Beijing?")]
+
+# 第一次调用：模型决定是否需要使用工具
+response = model_with_tools.invoke(messages)
+
+# 如果模型调用了工具，执行工具并再次调用模型
+if response.tool_calls:
+    messages.append(response)
+    for tool_call in response.tool_calls:
+        if tool_call["name"] == "get_weather":
+            tool_result = get_weather.invoke(tool_call)
+            messages.append(tool_result)
+
+    # 第二次调用：获取最终回答
+    final_response = model_with_tools.invoke(messages)
+    print(final_response.content)
+else:
+    print(response.content)
