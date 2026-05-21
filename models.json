@@ -1,0 +1,77 @@
+{
+  "description": "ModelScope 平台可免费体验的模型列表（兼容 OpenAI 接口）",
+  "source": "https://modelscope.cn",
+  "last_updated": "2026-05-21",
+  "models": [
+    {
+      "id": "inclusionAI/Ring-2.6-1T",
+      "name": "Ring-2.6-1T",
+      "provider": "inclusionAI",
+      "type": "chat",
+      "capabilities": ["text_generation", "tools"],
+      "context_length": 32768,
+      "free_tier": true,
+      "notes": ""
+    },
+    {
+      "id": "Qwen/Qwen3.5-27B",
+      "name": "Qwen3.5-27B",
+      "provider": "Alibaba",
+      "type": "chat",
+      "capabilities": ["text_generation", "tools", "reasoning"],
+      "context_length": 131072,
+      "free_tier": true,
+      "notes": ""
+    },
+    {
+      "id": "THUDM/glm-4-9b-chat",
+      "name": "GLM-4-9B-Chat",
+      "provider": "THUDM",
+      "type": "chat",
+      "capabilities": ["text_generation", "tools"],
+      "context_length": 128000,
+      "free_tier": true,
+      "notes": "当前 main.py 中使用的模型"
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V3",
+      "name": "DeepSeek-V3",
+      "provider": "DeepSeek",
+      "type": "chat",
+      "capabilities": ["text_generation", "tools", "coding"],
+      "context_length": 64000,
+      "free_tier": true,
+      "notes": ""
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-R1",
+      "name": "DeepSeek-R1",
+      "provider": "DeepSeek",
+      "type": "chat",
+      "capabilities": ["text_generation", "reasoning", "coding"],
+      "context_length": 64000,
+      "free_tier": true,
+      "notes": "推理模型"
+    },
+    {
+      "id": "meta-llama/Llama-3.3-70B-Instruct",
+      "name": "Llama-3.3-70B-Instruct",
+      "provider": "Meta",
+      "type": "chat",
+      "capabilities": ["text_generation", "tools"],
+      "context_length": 128000,
+      "free_tier": true,
+      "notes": ""
+    },
+    {
+      "id": "01-ai/Yi-1.5-34B-Chat",
+      "name": "Yi-1.5-34B-Chat",
+      "provider": "01.AI",
+      "type": "chat",
+      "capabilities": ["text_generation"],
+      "context_length": 32000,
+      "free_tier": true,
+      "notes": ""
+    }
+  ]
+}
