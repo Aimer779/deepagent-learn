@@ -1,77 +1,338 @@
 {
-  "description": "ModelScope 平台可免费体验的模型列表（兼容 OpenAI 接口）",
-  "source": "https://modelscope.cn",
-  "last_updated": "2026-05-21",
+  "description": "ModelScope 平台可用模型列表（通过 /v1/models 接口获取）",
+  "source": "https://api-inference.modelscope.cn/v1/",
+  "last_updated": "2026-05-21T16:13:27.275814",
+  "total": 66,
   "models": [
     {
-      "id": "inclusionAI/Ring-2.6-1T",
-      "name": "Ring-2.6-1T",
-      "provider": "inclusionAI",
-      "type": "chat",
-      "capabilities": ["text_generation", "tools"],
-      "context_length": 32768,
-      "free_tier": true,
-      "notes": ""
+      "id": "deepseek-ai/DeepSeek-R1-0528",
+      "provider": "deepseek-ai",
+      "created": 1748361600
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+      "provider": "deepseek-ai",
+      "created": 1737302400
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+      "provider": "deepseek-ai",
+      "created": 1737302400
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+      "provider": "deepseek-ai",
+      "created": 1737302400
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+      "provider": "deepseek-ai",
+      "created": 1737302400
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+      "provider": "deepseek-ai",
+      "created": 1737302400
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "provider": "deepseek-ai",
+      "created": 1737302400
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V3.2",
+      "provider": "deepseek-ai",
+      "created": 1764927217
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V4-Flash",
+      "provider": "deepseek-ai",
+      "created": 1777039693
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V4-Pro",
+      "provider": "deepseek-ai",
+      "created": 1777039670
+    },
+    {
+      "id": "iic/GUI-Owl-1.5-8B-Instruct",
+      "provider": "iic",
+      "created": 1774002312
+    },
+    {
+      "id": "iic/GUI-Owl-1.5-8B-Think",
+      "provider": "iic",
+      "created": 1774284916
+    },
+    {
+      "id": "LLM-Research/c4ai-command-r-plus-08-2024",
+      "provider": "LLM-Research",
+      "created": 1725120000
+    },
+    {
+      "id": "LLM-Research/Llama-4-Maverick-17B-128E-Instruct",
+      "provider": "LLM-Research",
+      "created": 1732517497
+    },
+    {
+      "id": "MedAIBase/AntAngelMed",
+      "provider": "MedAIBase",
+      "created": 1778513905
+    },
+    {
+      "id": "meituan-longcat/LongCat-Flash-Lite",
+      "provider": "meituan-longcat",
+      "created": 1770396434
+    },
+    {
+      "id": "MiniMax/MiniMax-M1-80k",
+      "provider": "MiniMax",
+      "created": 1751212800
+    },
+    {
+      "id": "MiniMax/MiniMax-M2.5",
+      "provider": "MiniMax",
+      "created": 1771062789
+    },
+    {
+      "id": "MiniMax/MiniMax-M2.7",
+      "provider": "MiniMax",
+      "created": 1776077341
+    },
+    {
+      "id": "mistralai/Ministral-8B-Instruct-2410",
+      "provider": "mistralai",
+      "created": 1727712000
+    },
+    {
+      "id": "mistralai/Mistral-Large-Instruct-2407",
+      "provider": "mistralai",
+      "created": 1719763200
+    },
+    {
+      "id": "mistralai/Mistral-Small-Instruct-2409",
+      "provider": "mistralai",
+      "created": 1725120000
+    },
+    {
+      "id": "moonshotai/Kimi-K2.5",
+      "provider": "moonshotai",
+      "created": 1770027165
+    },
+    {
+      "id": "MusePublic/Qwen-Image-Edit",
+      "provider": "MusePublic",
+      "created": 1760111983
+    },
+    {
+      "id": "opencompass/CompassJudger-1-32B-Instruct",
+      "provider": "opencompass",
+      "created": 1733414400
+    },
+    {
+      "id": "OpenGVLab/InternVL3_5-241B-A28B",
+      "provider": "OpenGVLab",
+      "created": 1759136265
+    },
+    {
+      "id": "PaddlePaddle/ERNIE-4.5-0.3B-PT",
+      "provider": "PaddlePaddle",
+      "created": 1751212800
+    },
+    {
+      "id": "PaddlePaddle/ERNIE-4.5-21B-A3B-PT",
+      "provider": "PaddlePaddle",
+      "created": 1751212800
+    },
+    {
+      "id": "PaddlePaddle/ERNIE-4.5-300B-A47B-PT",
+      "provider": "PaddlePaddle",
+      "created": 1751212800
+    },
+    {
+      "id": "PaddlePaddle/ERNIE-4.5-VL-28B-A3B-PT",
+      "provider": "PaddlePaddle",
+      "created": 1751212800
+    },
+    {
+      "id": "Qwen/QVQ-72B-Preview",
+      "provider": "Qwen",
+      "created": 1735056000
+    },
+    {
+      "id": "Qwen/Qwen-Image-Edit",
+      "provider": "Qwen",
+      "created": 1760111983
+    },
+    {
+      "id": "Qwen/Qwen3-0.6B",
+      "provider": "Qwen",
+      "created": 1745856000
+    },
+    {
+      "id": "Qwen/Qwen3-1.7B",
+      "provider": "Qwen",
+      "created": 1745856000
+    },
+    {
+      "id": "Qwen/Qwen3-14B",
+      "provider": "Qwen",
+      "created": 1745856000
+    },
+    {
+      "id": "Qwen/Qwen3-235B-A22B",
+      "provider": "Qwen",
+      "created": 1745856000
+    },
+    {
+      "id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "provider": "Qwen",
+      "created": 1753184646
+    },
+    {
+      "id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+      "provider": "Qwen",
+      "created": 1753184646
+    },
+    {
+      "id": "Qwen/Qwen3-30B-A3B",
+      "provider": "Qwen",
+      "created": 1745856000
+    },
+    {
+      "id": "Qwen/Qwen3-30B-A3B-Thinking-2507",
+      "provider": "Qwen",
+      "created": 1753184646
+    },
+    {
+      "id": "Qwen/Qwen3-32B",
+      "provider": "Qwen",
+      "created": 1745856000
+    },
+    {
+      "id": "Qwen/Qwen3-4B",
+      "provider": "Qwen",
+      "created": 1745856000
+    },
+    {
+      "id": "Qwen/Qwen3-8B",
+      "provider": "Qwen",
+      "created": 1745856000
+    },
+    {
+      "id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "provider": "Qwen",
+      "created": 1753184646
+    },
+    {
+      "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "provider": "Qwen",
+      "created": 1753184646
+    },
+    {
+      "id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+      "provider": "Qwen",
+      "created": 1753184646
+    },
+    {
+      "id": "Qwen/Qwen3-Next-80B-A3B-Thinking",
+      "provider": "Qwen",
+      "created": 1753184646
+    },
+    {
+      "id": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "provider": "Qwen",
+      "created": 1753184646
+    },
+    {
+      "id": "Qwen/Qwen3-VL-8B-Instruct",
+      "provider": "Qwen",
+      "created": 1759136265
+    },
+    {
+      "id": "Qwen/Qwen3-VL-8B-Thinking",
+      "provider": "Qwen",
+      "created": 1759136265
+    },
+    {
+      "id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "Qwen",
+      "created": 1772011504
     },
     {
       "id": "Qwen/Qwen3.5-27B",
-      "name": "Qwen3.5-27B",
-      "provider": "Alibaba",
-      "type": "chat",
-      "capabilities": ["text_generation", "tools", "reasoning"],
-      "context_length": 131072,
-      "free_tier": true,
-      "notes": ""
+      "provider": "Qwen",
+      "created": 1772011613
     },
     {
-      "id": "THUDM/glm-4-9b-chat",
-      "name": "GLM-4-9B-Chat",
-      "provider": "THUDM",
-      "type": "chat",
-      "capabilities": ["text_generation", "tools"],
-      "context_length": 128000,
-      "free_tier": true,
-      "notes": "当前 main.py 中使用的模型"
+      "id": "Qwen/Qwen3.5-35B-A3B",
+      "provider": "Qwen",
+      "created": 1772011559
     },
     {
-      "id": "deepseek-ai/DeepSeek-V3",
-      "name": "DeepSeek-V3",
-      "provider": "DeepSeek",
-      "type": "chat",
-      "capabilities": ["text_generation", "tools", "coding"],
-      "context_length": 64000,
-      "free_tier": true,
-      "notes": ""
+      "id": "Qwen/Qwen3.5-397B-A17B",
+      "provider": "Qwen",
+      "created": 1771262526
     },
     {
-      "id": "deepseek-ai/DeepSeek-R1",
-      "name": "DeepSeek-R1",
-      "provider": "DeepSeek",
-      "type": "chat",
-      "capabilities": ["text_generation", "reasoning", "coding"],
-      "context_length": 64000,
-      "free_tier": true,
-      "notes": "推理模型"
+      "id": "Qwen/QwQ-32B",
+      "provider": "Qwen",
+      "created": 1732517497
     },
     {
-      "id": "meta-llama/Llama-3.3-70B-Instruct",
-      "name": "Llama-3.3-70B-Instruct",
-      "provider": "Meta",
-      "type": "chat",
-      "capabilities": ["text_generation", "tools"],
-      "context_length": 128000,
-      "free_tier": true,
-      "notes": ""
+      "id": "Qwen/QwQ-32B-Preview",
+      "provider": "Qwen",
+      "created": 1737907200
     },
     {
-      "id": "01-ai/Yi-1.5-34B-Chat",
-      "name": "Yi-1.5-34B-Chat",
-      "provider": "01.AI",
-      "type": "chat",
-      "capabilities": ["text_generation"],
-      "context_length": 32000,
-      "free_tier": true,
-      "notes": ""
+      "id": "Shanghai_AI_Laboratory/Intern-S1",
+      "provider": "Shanghai_AI_Laboratory",
+      "created": 1759136265
+    },
+    {
+      "id": "Shanghai_AI_Laboratory/Intern-S1-mini",
+      "provider": "Shanghai_AI_Laboratory",
+      "created": 1759136265
+    },
+    {
+      "id": "Shanghai_AI_Laboratory/Intern-S2-Preview",
+      "provider": "Shanghai_AI_Laboratory",
+      "created": 1778878118
+    },
+    {
+      "id": "stepfun-ai/Step-3.5-Flash",
+      "provider": "stepfun-ai",
+      "created": 1770216621
+    },
+    {
+      "id": "XGenerationLab/XiYanSQL-QwenCoder-32B-2412",
+      "provider": "XGenerationLab",
+      "created": 1732517497
+    },
+    {
+      "id": "XGenerationLab/XiYanSQL-QwenCoder-32B-2504",
+      "provider": "XGenerationLab",
+      "created": 1732517497
+    },
+    {
+      "id": "XiaomiMiMo/MiMo-V2-Flash",
+      "provider": "XiaomiMiMo",
+      "created": 1765980336
+    },
+    {
+      "id": "ZhipuAI/GLM-4.7-Flash",
+      "provider": "ZhipuAI",
+      "created": 1768865988
+    },
+    {
+      "id": "ZhipuAI/GLM-5",
+      "provider": "ZhipuAI",
+      "created": 1770887782
+    },
+    {
+      "id": "ZhipuAI/GLM-5.1",
+      "provider": "ZhipuAI",
+      "created": 1776264446
     }
   ]
 }
